@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://kit.fontawesome.com/e96230aec2.js" crossorigin="anonymous"></script>
+
+  <title>JukeBox Music</title>
+</head>
+
+<body>
+  <% if(message != ""){ %>
+  <div class="alert alert-success" role="alert">
+    <strong> <%= message %> </strong>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  <% } %>
+  <h1 class="main-heading">My Music</h1>
+  <nav>
+    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+      <button class="nav-link active" id="nav-song-tab" data-bs-toggle="tab" data-bs-target="#nav-song" type="button" role="tab" aria-controls="nav-song" aria-selected="true">Songs</button>
+      <button class="nav-link" id="nav-albums-tab" data-bs-toggle="tab" data-bs-target="#nav-albums" type="button" role="tab" aria-controls="nav-albums" aria-selected="false">Albums</button>
+      <button class="nav-link" id="nav-artists-tab" data-bs-toggle="tab" data-bs-target="#nav-artists" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Artists</button>
+    </div>
+  </nav>
+  <div class="tab-content" id="nav-tabContent">
+    <div class="tab-pane fade show active" id="nav-song" role="tabpanel" aria-labelledby="nav-song-tab">
+      <div class="row">
+        <div class="col-4 headers">
+          <p>TITLE</p>
+        </div>
+        <div class="col-4 headers">
+          <p>ALBUM</p>
+        </div>
+        <div class="col-4 headers">
+          <p>ARTIST</p>
+        </div>
+      </div>
+      <% for(var i = 0 ;i<songs.length; i++){ %>
+      <div class="row records">
+        <div class="record song col-4">
+          <p class="text-ellipsis"><%= songs[i].title%></p>
+        </div>
+        <div class="record album col-4">
+          <p class="text-ellipsis"><%= songs[i].album%></p>
+        </div>
+        <div class="record artist col-4">
+          <p class="text-ellipsis"><%= songs[i].artist%></p>
+        </div>
+      </div>
+      <% } %>
+    </div>
+    <div class="tab-pane fade" id="nav-albums" role="tabpanel" aria-labelledby="nav-albums-tab">
+      <div class="row">
+        <div class="col-6">
+          <p class="headers">ALBUM</p>
+        </div>
+        <div class="col-6">
+          <p class="headers">ARTIST</p>
+        </div>
+      </div>
+      <% for(var i = 0 ;i<albums.length; i++){ %>
+      <div class="row records">
+        <div class="record album col-6">
+          <p class="text-ellipsis"><%= albums[i].album%></p>
+        </div>
+        <div class="record album col-6">
+          <p class="text-ellipsis"><%= albums[i].artist%></p>
+        </div>
+      </div>
+      <% } %>
+    </div>
+    <div class="tab-pane fade" id="nav-artists" role="tabpanel" aria-labelledby="nav-artists-tab">
+      <% for(var i = 0 ;i<artists.length; i++){ %>
+      <div class="record">
+        <p class="text-ellipsis"><%= artists[i].name  %></p>
+      </div>
+      <% } %>
+    </div>
+  </div>
+  <div class="playlist-info-button">
+    <a href="playlist_view"><button type="submit" class="btn btn-outline-dark btn-lg searchbtn"><i class="fas fa-info icon"></i></button></a>
+  </div>
+  <div class="playlist-button">
+    <a href="playlist"><button type="submit" class="btn btn-outline-dark btn-lg searchbtn"><i class="fas fa-plus icon"></i></button></a>
+  </div>
+  <div class="search-button">
+    <a href="search"><button type="submit" class="btn btn-outline-dark btn-lg searchbtn"><i class="fas fa-search icon"></i></button></a>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <script src="app1.js" charset="utf-8"></script>
+
+</body>
+
+</html>

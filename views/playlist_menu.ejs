@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://kit.fontawesome.com/e96230aec2.js" crossorigin="anonymous"></script>
+
+  <title>JukeBox Playlist Songs</title>
+</head>
+
+<body>
+  <div class="search-pg-heading">
+    <h1><strong>JukeBox</strong></h1>
+  </div>
+  <form class="" action="/playlist_menu" method="post">
+    <div class="search-container">
+      <input class="search-input" name="searchitem" type="text" placeholder="Search your favourite songs for your playlist" autocomplete="off">
+    </div>
+  </form>
+  <div class="display">
+    <% if (show == "Not Found" || show == "") {%>
+    <div class="search-record">
+      <% show = " " %>
+      <p class="default">Sorry! couldn't find your Searched Song. Please check for typos.</p>
+    </div>
+    <% } %>
+    <% if (show != " " && show != "Not Found"){%>
+    <div class="row">
+      <div class="col-3 headers">
+        <p>ADD</p>
+      </div>
+      <div class="col-3 headers">
+        <p>TITLE</p>
+      </div>
+      <div class="col-3 headers">
+        <p>ALBUM</p>
+      </div>
+      <div class="col-3 headers">
+        <p>ARTIST</p>
+      </div>
+    </div>
+    <!-- <div class="playlist_search"> -->
+    <% for(var i = 0 ;i<show.length; i++){ %>
+    <div class="row records">
+      <div class="search-record add col-3">
+        <button class="btn btn btn-lg addbtn" id="addbtn">+</button>
+      </div>
+      <div class="search-record song col-3">
+        <p class="text-ellipsis">"<%= show[i].title %>"</p>
+        <!-- <input name="song_title" class="text-ellipsis" value="<%= show[i].title %>"> -->
+      </div>
+      <div class="search-record album col-3">
+        <!-- <input name="album_title" class="text-ellipsis" value="<%= show[i].album%>"> -->
+        <p class="text-ellipsis">"<%= show[i].album %>"</p>
+      </div>
+      <div class="search-record artist col-3">
+        <!-- <input name="artist_title" class="text-ellipsis" value="<%= show[i].artist%>"> -->
+        <p class="text-ellipsis">"<%= show[i].album %>"</p>
+      </div>
+    </div>
+    <% } %>
+    <!-- </div> -->
+
+    <% } %>
+  </div>
+  <!-- <script src="playlis.js" charset="utf-8"></script> -->
+  <!-- <script type="text/javascript">
+    const item = document.querySelector(".records") ;
+    item.addEventListener("click", (event)=>{
+      event.preventDefault();
+      console.log(event.target.nextElementSibling.inner);
+                                      // console.log(event.target.nextElementSibling.value);
+                                    // });
+                                    // const add = document.querySelectorAll(".addbtn");
+                                    // add.forEach((item, i) => {
+                                    //
+                                    // });
+                                    // addEventListener("click", (event)=>{
+                                    //   event.preventDefault();
+                                    //   console.log(add.nextElementSibling.value);
+      let data = {searchitem: event.target.nextElementSibling.innerText, album_title: event.target.nextElementSibling.nextElementSibling.innerText, artist_title: event.target.nextElementSibling.nextElementSibling.nextElementSibling.innerText};
+      console.log(data);
+      console.log("TESTING");
+      fetch("/playlist_menu",{
+        method: 'POST',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
+      });
+    });
+  </script> -->
+  <script type="text/javascript">
+    const select = document.querySelectorAll(".records");
+    select.forEach((item) => {
+      item.addEventListener("click", function(event) {
+        console.log(item.children[1].innerText);
+        console.log(item.children[2].innerText);
+        console.log(item.children[3].innerText);
+        let data = {
+          song_title: item.children[1].innerText,
+          album_title: item.children[2].innerText,
+          artist_title: item.children[3].innerText,
+          searchitem: item.children[1].innerText
+        };
+        fetch("/playlist_menu", {
+          method: 'POST',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>

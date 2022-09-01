@@ -1,0 +1,260 @@
+body {
+  background-image: linear-gradient(to right, #FCD1D1, #ECE2E1, #D3E0DC, #AEE1E1);
+}
+
+.container-fluid{
+  padding: 1.5% 0;
+  text-align: center;
+}
+
+.intro {
+  min-height: 16rem;
+  padding: 15rem 20rem 5rem 20rem;
+}
+
+.carousel-control-prev {
+  position: fixed;
+  left: 5rem;
+  bottom: 2.75rem;
+}
+
+.carousel-control-next {
+  position: fixed;
+  right: 5rem;
+  bottom: 2.75rem;
+}
+
+.downbtn {
+  margin: 1rem 2rem 0 0;
+}
+
+.join {
+  position: fixed;
+  bottom: 15rem;
+  right: 39rem;
+}
+
+/* Sign Up page */
+.signup {
+  width: 30%;
+  margin: 8rem 32rem;
+}
+
+.signup-heading {
+  text-align: center;
+  padding: 2rem;
+}
+
+.form-control {
+  margin: auto;
+  width: 100%;
+  display: block;
+}
+
+.sub-btn {
+  text-align: center;
+}
+
+.btn-close {
+  position: absolute;
+  right: 2rem;
+}
+
+.main-heading {
+  margin: 2rem 0 2rem 1rem;
+}
+
+.alert {
+  margin-bottom: 0;
+}
+
+.nav-tabs {
+  margin-left: 1rem;
+}
+
+.nav-tabs .nav-link {
+  font-size: 24px;
+  text-align: center;
+  padding: 0 1rem;
+  color: black;
+}
+
+.nav-tabs .nav-link.active {
+  color: #ffff;
+  background-color: inherit;
+  border-bottom: 3px solid #ffff;
+}
+
+.tab-content {
+  margin: 1rem;
+}
+
+.headers {
+  text-align: center;
+  /* padding-left: 1rem; */
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.record {
+  padding: 0.5rem 5rem;
+  text-align: left;
+  /* position: relative;
+  animation-name: example;
+  animation-duration: 15s; */
+}
+
+/* @keyframes example {
+  from {background-image: linear-gradient(to right, #FCD1D1 , #ECE2E1, #D3E0DC, #AEE1E1);}
+  to {background-image: linear-gradient(to right, #E8DED2 , #A3D2CA, #5EAAA8, #056676);}
+} */
+/* .records{
+  display: inline-block;
+} */
+.records:hover {
+  background-color: #D3E0DC;
+}
+
+.text-ellipsis {
+  width: 20rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.search-button {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  padding: 20px;
+}
+
+.playlist-button {
+  position: fixed;
+  bottom: 80px;
+  right: 0;
+  padding: 20px;
+}
+
+.playlist-info-button {
+  position: fixed;
+  bottom: 160px;
+  right: 0;
+  padding: 20px;
+}
+
+.searchbtn{
+  border-radius: 70%;
+  height: 70px;
+  width: 70px;
+}
+
+.icon {
+  font-size: 2rem;
+}
+
+/* Search page */
+
+.search-pg-heading
+{
+  padding: 1.5% 0;
+  text-align: center;
+}
+
+.search-container {
+  width: 70%;
+  margin: auto;
+  /* margin: 30vh; */
+  text-align: center;
+}
+
+.search-input {
+  width: 100%;
+  margin-bottom: 3rem;
+  padding: 12px 24px;
+  background-color: transparent;
+  transition: transform 250ms ease-in-out;
+  font-size: 14px;
+  line-height: 18px;
+  color: #575756;
+  border-radius: 50px;
+  border: 1px solid #575756;
+}
+
+.search-input::placeholder {
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.search-input:hover, .search-input:focus {
+  padding: 12px 0;
+  outline: 0;
+  border: 1px solid transparent;
+  border-bottom: 1px solid #575756;
+  border-radius: 0;
+}
+
+.display
+{
+  text-align: center;
+}
+
+.search-record
+{
+  padding: 0.5rem 2.3rem;
+  text-align: center;
+  display: block;
+}
+
+.default
+{
+  font-size: 1.5rem;
+}
+
+/* playlist page */
+.playlist-container {
+  width: 70%;
+  margin: 30vh;
+  text-align: center;
+}
+
+.playlist-input {
+  width: 100%;
+  margin-bottom: 3rem;
+  padding: 12px 24px;
+  background-color: transparent;
+  transition: transform 250ms ease-in-out;
+  font-size: 14px;
+  line-height: 18px;
+  color: #575756;
+  border-radius: 50px;
+  border: 1px solid #575756;
+}
+
+.playlist-input::placeholder {
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.playlist-input:hover, .playlist-input:focus {
+  padding: 12px 0;
+  outline: 0;
+  border: 1px solid transparent;
+  border-bottom: 1px solid #575756;
+  border-radius: 0;
+}
+
+/* playlist_menu page */
+.addbtn
+{
+  border: 0;
+  font-size: 2rem;
+  color: black;
+  transform: matrix3d();
+  text-align: center;
+}
+
+.addbtn:hover
+{
+  color: #ffff;
+}
